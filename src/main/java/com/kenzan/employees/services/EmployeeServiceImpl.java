@@ -60,7 +60,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private Employee getEmployeeById(Long id) {
         Employee existingEmployee = employeeDao.findOne(id);
         if (existingEmployee == null) {
-            throw new EmployeeNotFoundException("The request employee don´t exist.");
+            throw new EmployeeNotFoundException("The request employee doesn´t exist.");
         }
         return existingEmployee;
     }

@@ -22,6 +22,8 @@ public class EmployeeController {
 
     private static final String USER = "poncho";
     private static final String PASSWORD = "P0nchO";
+    private static final int AUTH_USER_INDEX = 0;
+    private static final int AUTH_PASS_INDEX = 1;
 
     @RequestMapping(value = {"/employee/{id}"}, method = RequestMethod.GET)
     @Description(value = "returns specific Employee by id")
@@ -82,7 +84,7 @@ public class EmployeeController {
                     = Base64.decodeBase64(encodedAuthorizationHeader.getBytes());
             final String pair = new String(decodedBytes);
             final String[] userDetails = pair.split(":", 2);
-            return userDetails[0].equals(USER) && userDetails[1].equals(PASSWORD);
+            return userDetails[AUTH_USER_INDEX].equals(USER) && userDetails[AUTH_PASS_INDEX].equals(PASSWORD);
         } catch (Exception ex) {
             return false;
         }

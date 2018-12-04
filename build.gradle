@@ -31,7 +31,6 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:${project.bootVersion}")
     compile("org.springframework.boot:spring-boot-starter-data-jpa:${project.bootVersion}")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     runtime "com.h2database:h2:1.4.191"
 }
 
